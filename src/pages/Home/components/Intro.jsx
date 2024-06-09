@@ -12,7 +12,7 @@ export const Intro = () => {
           Build a professional CV that passes Applicant Tracking Systems and
           lands you your dream job, all in under 12 minutes.
         </p>
-        <Link to="/create-cv">
+        <Link to="/cv-it/create-cv">
           <button className="btn mt-10 capitalize">Create CV</button>
         </Link>
         <a href="#steps">

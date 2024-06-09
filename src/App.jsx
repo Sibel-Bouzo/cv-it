@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route index path="/" element={<HomePage />} />
-        <Route path="/create-cv" element={<CreateCv />} />
+        <Route index path="/cv-it/" element={<HomePage />} />
+        <Route path="/cv-it/create-cv" element={<CreateCv />} />
       </Routes>
     </>
   );

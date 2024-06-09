@@ -137,7 +137,7 @@ export const CreateCv = () => {
       >
         <div>
           <p className="mb-2">
-            <Link to="/" className="text-blue-600 text-sm underline">
+            <Link to="/cv-it/" className="text-blue-600 text-sm underline">
               Home
             </Link>{" "}
             &gt; create-cv
