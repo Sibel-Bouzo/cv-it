@@ -15,7 +15,7 @@ export const Footer = () => {
                 key={index}
                 className="pb-4 duration-300 text-[#f5f5f5] !list-none cursor-pointer hover:text-primary"
               >
-                {item.element}
+                <a href={item.href}>{item.element}</a>
               </li>
             ))}
           </ul>

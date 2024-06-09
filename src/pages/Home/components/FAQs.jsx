@@ -30,7 +30,20 @@ export const FAQs = () => {
 
               {faq.question}
             </h3>
-            {openIndex === index && <p className="mt-2">{faq.answer}</p>}
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-linear ${
+                openIndex === index
+                  ? "max-h-96 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+              style={{
+                transitionProperty: "max-height, opacity",
+                maxHeight: openIndex === index ? "500px" : "0",
+                opacity: openIndex === index ? 1 : 0,
+              }}
+            >
+              <p className="mt-3">{faq.answer}</p>
+            </div>
           </div>
         ))}
       </div>
