@@ -254,8 +254,8 @@ li {
 
 .go-down {
   position: absolute;
-  bottom: 0;
-
+  bottom: 10px;
+  left: 49%;
   color: var(--primary);
   animation: bouncing 1.5s infinite;
 }
@@ -359,6 +359,27 @@ li {
 .step:hover::after {
   width: 2px;
   height: 100%;
+}
+
+.custom-shape-divider-bottom-1717967457 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1717967457 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 217px;
+}
+
+.custom-shape-divider-bottom-1717967457 .shape-fill {
+  fill: #ffffff;
 }
 
 @keyframes left-fill {
