@@ -253,22 +253,11 @@ li {
 }
 
 .go-down {
-  position: absolute;
-  bottom: 10px;
-  left: 49%;
   color: var(--primary);
   animation: bouncing 1.5s infinite;
 }
 
 .btn {
-  position: relative;
-  border: 2px solid black;
-  width: fit-content;
-  padding: 20px 40px;
-  font-size: 30px;
-  font-weight: bold;
-  text-transform: uppercase;
-  z-index: 1;
   transition: var(--transition-duration);
 }
 .btn:hover {

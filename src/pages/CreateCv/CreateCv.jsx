@@ -136,7 +136,7 @@ export const CreateCv = () => {
         )}
       >
         <div>
-          <p className="mb-2">
+          <p className="mb-6">
             <Link to="/cv-it/" className="text-blue-600 text-sm underline">
               Home
             </Link>{" "}
@@ -217,10 +217,10 @@ export const CreateCv = () => {
               </button>
 
               <button
-                className="text-white bg-primary px-2 py-1 sm:px-6 sm:py-2 rounded-md capitalize font-semibold text-center align-middle flex items-center justify-between gap-2 duration-300 hover:bg-sky-400"
+                className="text-white bg-primary px-2 py-1 sm:px-6 sm:py-2 rounded-md capitalize font-semibold text-center align-middle flex items-center justify-between gap-2"
                 onClick={downloadPdf}
               >
-                <p className=" bold text-lg">
+                <p className="bold text-lg">
                   <FiDownload />
                 </p>
                 <p className="hidden sm:block">download</p>

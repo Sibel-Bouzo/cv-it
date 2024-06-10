@@ -19,7 +19,8 @@ export const JobEntry = ({ index, job, onDelete, onUpdate }) => {
   };
 
   const handleQuillChange = (value) => {
-    onUpdate(index, "description", value);
+    const updatedVal = value == "<p><br></p>" ? undefined : value;
+    onUpdate(index, "description", updatedVal);
   };
 
   return (

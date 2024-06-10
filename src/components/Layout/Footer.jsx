@@ -4,9 +4,9 @@ import { navEl } from "@/data/data";
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#191919] pt-16 ">
+    <footer className="bg-[#191919] pt-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-14 w-[80%] m-auto mb-10">
-        <img src="images/logo.png" className="w-28 " />
+        <img src="images/logo.png" className="w-28" />
         <div>
           <h3 className="mb-4 font-semibold text-gray-600 text-2xl">Explore</h3>
           <ul>

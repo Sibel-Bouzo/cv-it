@@ -2,9 +2,9 @@ import { FcSearch, FcTodoList, FcIdea, FcShare } from "react-icons/fc";
 
 export const Steps = () => {
   return (
-    <div className="py-20 bg-white w-full" id="steps">
+    <div className="py-14 sm:py-20 bg-white w-full" id="steps">
       <div className="w-[80%] m-auto">
-        <h2 className="text-center text-4xl mb-24 uppercase relative font-semibold  main-title">
+        <h2 className="text-center text-4xl mb-16 sm:mb-24 uppercase relative font-semibold  main-title">
           steps
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-10 w-full">

@@ -26,7 +26,8 @@ export const CostumEntry = ({ index, onDelete, onUpdate, customItem }) => {
   };
 
   const handleQuillChange = (value) => {
-    onUpdate(index, "description", value);
+    const updatedVal = value == "<p><br></p>" ? undefined : value;
+    onUpdate(index, "description", updatedVal);
   };
 
   return (

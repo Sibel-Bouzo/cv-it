@@ -7,7 +7,7 @@ export const Nav = () => {
         <img
           src="images/logo.png"
           alt="logo"
-          className="w-[20%] sm:w-[4.6rem]"
+          className="w-[25%] sm:w-[4.6rem]"
         />
         <ul className="flex !list-none m-auto sm:m-0 main-nav">
           {navEl.map((item, index) => (

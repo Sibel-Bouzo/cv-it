@@ -33,7 +33,7 @@ export const Summary = () => {
           setCvData((prev) => {
             return {
               ...prev,
-              summary: e,
+              summary: e == "<p><br></p>" ? undefined : e,
             };
           })
         }

@@ -1,13 +1,13 @@
 import { features } from "@/data/data";
 export const Features = () => {
   return (
-    <div className="py-20 w-full" id="features">
+    <div className="py-14 sm:py-20 w-full" id="features">
       <div className="w-[80%] m-auto">
-        <h2 className="text-center text-4xl mb-24 uppercase relative font-semibold  main-title">
+        <h2 className="text-center text-4xl mb-16 sm:mb-24 uppercase relative font-semibold  main-title">
           features
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-10 w-full">
-          <img src="" alt="" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-20 w-full">
+          <img src="images/cvs.png" alt="cv" className="hidden md:block" />
           <div>
             {features.map((feature, index) => (
               <div className="mb-3" key={index}>

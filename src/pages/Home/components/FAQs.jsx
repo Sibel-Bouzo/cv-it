@@ -10,16 +10,19 @@ export const FAQs = () => {
   };
 
   return (
-    <div className="bg-white py-20 w-full" id="faqs">
+    <div className="bg-white py-14 sm:py-20 w-full" id="faqs">
       <div className="w-[80%] m-auto">
-        <h2 className="text-center text-4xl mb-24 uppercase relative font-semibold main-title">
+        <h2 className="text-center text-4xl mb-16 sm:mb-24 uppercase relative font-semibold main-title">
           FAQ
           <span className="normal-case">s</span>
         </h2>
         {faqs.map((faq, index) => (
-          <div className="mb-4 pb-4 border-b border-gray-200" key={index}>
+          <div
+            className="mb-4 pb-4 [&:not(:last-child)]:border-b border-gray-200"
+            key={index}
+          >
             <h3
-              className="text-xl font-semibold cursor-pointer flex items-center"
+              className="text-lg sm:text-xl font-semibold cursor-pointer flex items-start sm:items-center"
               onClick={() => toggleAnswer(index)}
             >
               {openIndex === index ? (
@@ -42,7 +45,7 @@ export const FAQs = () => {
                 opacity: openIndex === index ? 1 : 0,
               }}
             >
-              <p className="mt-3">{faq.answer}</p>
+              <p className="mt-3 text-justify">{faq.answer}</p>
             </div>
           </div>
         ))}

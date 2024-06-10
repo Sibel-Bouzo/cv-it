@@ -9,10 +9,12 @@ export const HomePage = () => {
   return (
     <>
       <Nav />
-      <Intro />
-      <Steps />
-      <Features />
-      <FAQs />
+      <main>
+        <Intro />
+        <Steps />
+        <Features />
+        <FAQs />
+      </main>
       <Footer />
     </>
   );

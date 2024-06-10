@@ -3,6 +3,7 @@ import "react-quill/dist/quill.snow.css"; // Import styles for React-Quill
 
 export const Cv = () => {
   const { cvData } = useGlobalContext();
+  console.log(cvData?.summary);
 
   return (
     <div
