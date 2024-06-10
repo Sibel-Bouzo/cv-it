@@ -22,7 +22,7 @@ export const FAQs = () => {
             key={index}
           >
             <h3
-              className="text-lg sm:text-xl font-semibold cursor-pointer flex items-start sm:items-center"
+              className=" sm:text-xl font-semibold cursor-pointer flex items-start sm:items-center"
               onClick={() => toggleAnswer(index)}
             >
               {openIndex === index ? (
