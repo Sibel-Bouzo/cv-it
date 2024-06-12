@@ -132,14 +132,14 @@ export const CreateCv = () => {
       <div
         className={clsx(
           isFinished && "hidden md:flex",
-          "fixed left-0 top-0 w-full md:w-[50%] md:rounded-r-3xl shadow-xl px-10 py-8 h-[100vh] overflow-y-auto bg-white flex flex-col justify-between"
+          "fixed left-0 top-0 w-full md:w-[50%] md:rounded-r-3xl shadow-xl px-10 py-8 h-[100vh] overflow-y-auto bg-white flex flex-col sm:justify-between"
         )}
       >
         <div>
           <p className="mb-6">
             <Link to="/cv-it/" className="text-blue-600 text-sm underline">
               Home
-            </Link>{" "}
+            </Link>
             &gt; create-cv
           </p>
 
