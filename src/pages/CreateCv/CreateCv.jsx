@@ -8,7 +8,6 @@ import { Languages } from "@/pages/CreateCv/components/Languages";
 import { useState, useEffect } from "react";
 import { Costumized } from "@/pages/CreateCv/components/Costumized";
 import { Cv } from "./components/Cv";
-import { useRef } from "react";
 import clsx from "clsx";
 import { MdArrowBack } from "react-icons/md";
 import { AltCv } from "./components/AltCv";
@@ -50,8 +49,6 @@ export const CreateCv = () => {
   const [isFinished, setIsFinished] = useState(false);
   const [isMediumOrLarger, setIsMediumOrLarger] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
-
-  const cvRef = useRef();
 
   const downloadPdf = async () => {
     const iframe = document.createElement("iframe");
@@ -230,7 +227,6 @@ export const CreateCv = () => {
 
           <div className="flip-container">
             <div
-              ref={cvRef}
               className={clsx(
                 "flex flex-col justify-start items-center scale-[0.4] sm:scale-[0.55] md:scale-[0.6] bg-white w-[210mm] min-h-[297mm] transform origin-top shadow-lg overflow-y-auto",
                 isFlipped && "flipped"
