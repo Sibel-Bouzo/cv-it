@@ -40,47 +40,6 @@ export const Cv = () => {
 
   const renderComponent = (item) => {
     switch (item) {
-      case "personalDetails":
-        return (
-          Object.values(cvData?.personalDetails).filter((item) => !!item)
-            .length > 0 && (
-            <div className="border-b border-black pb-4 text-center personal-details w-full justify-center">
-              <h1 className="capitalize font-bold text-[26px]">
-                {cvData.personalDetails?.firstName}{" "}
-                {cvData.personalDetails?.lastName}
-              </h1>
-              <h3 className="capitalize font-semibold text-[22px] mb-2">
-                {cvData.personalDetails?.jobTitle}
-              </h3>
-              <ul className="flex justify-center gap-6 list-disc text-[14px] overflow-wrap-anywhere p-0">
-                {(cvData.personalDetails?.city ||
-                  cvData.personalDetails?.counrty) && (
-                  <li className="capitalize">
-                    {cvData.personalDetails?.city},{" "}
-                    {cvData.personalDetails?.counrty}
-                  </li>
-                )}
-                {cvData.personalDetails?.phone && (
-                  <li>{cvData.personalDetails?.phone}</li>
-                )}
-                {cvData.personalDetails?.email && (
-                  <li>{cvData.personalDetails?.email}</li>
-                )}
-                {cvData.personalDetails?.personalweb && (
-                  <li>
-                    <a
-                      href={`https://${cvData.personalDetails?.personalweb}`}
-                      className="text-blue-500 hover:underline"
-                      target="_blank"
-                    >
-                      {cvData.personalDetails?.personalweb}
-                    </a>
-                  </li>
-                )}
-              </ul>
-            </div>
-          )
-        );
       case "summary":
         return (
           cvData?.summary && (
@@ -289,6 +248,44 @@ export const Cv = () => {
       id="divToPrint"
       style={{ overflowWrap: "anywhere" }}
     >
+      {Object.values(cvData?.personalDetails).filter((item) => !!item).length >
+        0 && (
+        <div className="border-b border-black pb-4 text-center personal-details w-full justify-center">
+          <h1 className="capitalize font-bold text-[26px]">
+            {cvData.personalDetails?.firstName}{" "}
+            {cvData.personalDetails?.lastName}
+          </h1>
+          <h3 className="capitalize font-semibold text-[22px] mb-2">
+            {cvData.personalDetails?.jobTitle}
+          </h3>
+          <ul className="flex justify-center gap-6 list-disc text-[14px] overflow-wrap-anywhere p-0">
+            {(cvData.personalDetails?.city ||
+              cvData.personalDetails?.counrty) && (
+              <li className="capitalize">
+                {cvData.personalDetails?.city},{" "}
+                {cvData.personalDetails?.counrty}
+              </li>
+            )}
+            {cvData.personalDetails?.phone && (
+              <li>{cvData.personalDetails?.phone}</li>
+            )}
+            {cvData.personalDetails?.email && (
+              <li>{cvData.personalDetails?.email}</li>
+            )}
+            {cvData.personalDetails?.personalweb && (
+              <li>
+                <a
+                  href={`https://${cvData.personalDetails?.personalweb}`}
+                  className="text-blue-500 hover:underline"
+                  target="_blank"
+                >
+                  {cvData.personalDetails?.personalweb}
+                </a>
+              </li>
+            )}
+          </ul>
+        </div>
+      )}
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="cvSections">
           {(provided) => (
