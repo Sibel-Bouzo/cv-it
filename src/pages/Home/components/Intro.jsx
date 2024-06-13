@@ -12,7 +12,7 @@ export const Intro = () => {
           Build a professional CV that passes Applicant Tracking Systems and
           lands you your dream job, all in under 12 minutes.
         </p>
-        <Link to="/cv-it/create-cv">
+        <Link to="/create-cv">
           <button className="btn mt-10 relative border-2 border-black w-fit py-3 px-6 text-xl sm:py-5 sm:px-10 sm:text-3xl font-bold uppercase ">
             Create CV
           </button>

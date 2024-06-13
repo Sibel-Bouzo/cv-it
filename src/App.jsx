@@ -7,10 +7,10 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route index path="/cv-it/" element={<HomePage />} />
         <Route path="/cv-it/create-cv" element={<CreateCv />} />
-      </Routes>
+      </Routes> */}
     </>
   );
 }
