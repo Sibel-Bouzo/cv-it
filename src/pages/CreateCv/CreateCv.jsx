@@ -99,37 +99,6 @@ export const CreateCv = () => {
               margin:0;
               font-family: ${fontFamily}; /* Dynamically set the font-family */
             }    
-      .flip-container {
-  perspective: 1000px;
-}
-.flip-container > div {
-scale:1;
-width: 100%;
-height:100%;
-transform:unset
-}
-.flipper {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.front,
-.back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-
-.flipped .flipper {
-  transform: rotateY(180deg);
-}        
           </style>
         </head>
         <body>
