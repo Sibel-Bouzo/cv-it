@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useGlobalContext } from "@/contexts/Context";
 import { useState } from "react";
 import { Label } from "../../../components/ui/label";
 import { Input } from "../../../components/ui/input";
@@ -11,7 +12,8 @@ import {
 
 // eslint-disable-next-line react/prop-types
 export const CostumEntry = ({ index, onDelete, onUpdate, customItem }) => {
-  const [isShowMore, setIsShowMore] = useState(false);
+  const { expandedIndices, toggleEntry } = useGlobalContext();
+  const isShowMore = expandedIndices.custom === index;
 
   const [title, setTitle] = useState("Untitled");
   const [isEditing, setIsEditing] = useState(false);
@@ -33,7 +35,7 @@ export const CostumEntry = ({ index, onDelete, onUpdate, customItem }) => {
   return (
     <div className="border-b-2 border-blue-500 bg-blue p-2 text-sm mt-4 mb-5">
       <div
-        onClick={() => setIsShowMore(!isShowMore)}
+        onClick={() => toggleEntry("custom", index)}
         className="flex flex-row justify-between items-center"
       >
         {isEditing ? (

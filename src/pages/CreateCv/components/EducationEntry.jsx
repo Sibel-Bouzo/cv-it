@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useGlobalContext } from "@/contexts/Context";
 import { Label } from "../../../components/ui/label";
 import { Input } from "../../../components/ui/input";
 import ReactQuill from "react-quill";
@@ -10,7 +10,8 @@ import {
 } from "react-icons/md";
 
 export const EducationEntry = ({ index, education, onDelete, onUpdate }) => {
-  const [isShowMore, setIsShowMore] = useState(false);
+  const { expandedIndices, toggleEntry } = useGlobalContext();
+  const isShowMore = expandedIndices.education === index;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +26,7 @@ export const EducationEntry = ({ index, education, onDelete, onUpdate }) => {
   return (
     <div className="border-b-2 border-primary bg-blue p-2 text-sm mt-4 mb-6">
       <div
-        onClick={() => setIsShowMore(!isShowMore)}
+        onClick={() => toggleEntry("education", index)}
         className="flex flex-row justify-between items-center"
       >
         <div>

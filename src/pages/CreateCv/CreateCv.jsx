@@ -61,9 +61,17 @@ export const CreateCv = () => {
 
     const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
+    // const printContents = isFlipped
+    //   ? document.querySelector(".back").innerHTML
+    //   : document.querySelector(".front").innerHTML;
+
     const printContents = isFlipped
-      ? document.querySelector(".back").innerHTML
-      : document.querySelector(".front").innerHTML;
+      ? document.getElementById("divToPrintBack").innerHTML
+      : document.getElementById("divToPrintFront").innerHTML;
+
+    const fontFamily = isFlipped
+      ? "Times New Roman, serif"
+      : "Arial, sans-serif";
 
     const stylesheets = Array.from(document.styleSheets)
       .map((styleSheet) => {
@@ -93,7 +101,9 @@ export const CreateCv = () => {
             body {
               background-color: white;
               margin:0;
-            }
+                          font-family: ${fontFamily}; /* Dynamically set the font-family */
+
+            }            
           </style>
         </head>
         <body>

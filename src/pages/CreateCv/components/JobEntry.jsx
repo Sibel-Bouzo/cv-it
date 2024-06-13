@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 import { Label } from "../../../components/ui/label";
 import { Input } from "../../../components/ui/input";
 import ReactQuill from "react-quill";
@@ -8,10 +7,12 @@ import {
   MdKeyboardArrowDown,
   MdKeyboardArrowUp,
 } from "react-icons/md";
+import { useGlobalContext } from "@/contexts/Context";
 
 // eslint-disable-next-line react/prop-types
 export const JobEntry = ({ index, job, onDelete, onUpdate }) => {
-  const [isShowMore, setIsShowMore] = useState(false);
+  const { expandedIndices, toggleEntry } = useGlobalContext();
+  const isShowMore = expandedIndices.employment === index;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +27,7 @@ export const JobEntry = ({ index, job, onDelete, onUpdate }) => {
   return (
     <div className="border-b-2 border-blue-500 bg-blue p-2 text-sm mt-4 mb-6">
       <div
-        onClick={() => setIsShowMore(!isShowMore)}
+        onClick={() => toggleEntry("employment", index)}
         className="flex flex-row justify-between items-center"
       >
         <div>

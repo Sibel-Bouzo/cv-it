@@ -238,8 +238,8 @@ export const AltCv = () => {
   };
   return (
     <div
-      className="p-14 w-full cv arial"
-      id="divToPrint"
+      className="p-14 w-full cv times-new-roman"
+      id="divToPrintBack"
       style={{ overflowWrap: "anywhere" }}
     >
       {Object.values(cvData?.personalDetails).filter((item) => !!item).length >

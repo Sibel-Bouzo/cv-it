@@ -245,7 +245,7 @@ export const Cv = () => {
   return (
     <div
       className="p-14 w-full cv arial"
-      id="divToPrint"
+      id="divToPrintFront"
       style={{ overflowWrap: "anywhere" }}
     >
       {Object.values(cvData?.personalDetails).filter((item) => !!item).length >

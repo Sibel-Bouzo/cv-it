@@ -120,6 +120,19 @@ const AppProvider = ({ children }) => {
     }));
   };
 
+  const [expandedIndices, setExpandedIndices] = useState({
+    employment: null,
+    education: null,
+    // Add other sections as needed
+  });
+
+  const toggleEntry = (section, index) => {
+    setExpandedIndices((prev) => ({
+      ...prev,
+      [section]: prev[section] === index ? null : index,
+    }));
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -128,6 +141,9 @@ const AppProvider = ({ children }) => {
         addEntry,
         deleteEntry,
         updateEntry,
+
+        expandedIndices,
+        toggleEntry,
       }}
     >
       {children}

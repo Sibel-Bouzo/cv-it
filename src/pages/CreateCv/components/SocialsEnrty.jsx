@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useGlobalContext } from "@/contexts/Context";
 import { Input } from "../../../components/ui/input";
 import {
   MdDeleteOutline,
@@ -9,8 +9,8 @@ import {
 
 // eslint-disable-next-line react/prop-types
 export const SocialsEnrty = ({ index, onDelete, social, onUpdate }) => {
-  const [isShowMore, setIsShowMore] = useState(false);
-
+  const { expandedIndices, toggleEntry } = useGlobalContext();
+  const isShowMore = expandedIndices.socials === index;
   const handleChange = (e) => {
     const { name, value } = e.target;
     onUpdate(index, name, value);
@@ -19,7 +19,7 @@ export const SocialsEnrty = ({ index, onDelete, social, onUpdate }) => {
   return (
     <div className="border-b-2 border-blue-500 bg-blue p-2 text-sm mt-4 mb-6">
       <div
-        onClick={() => setIsShowMore(!isShowMore)}
+        onClick={() => toggleEntry("socials", index)}
         className="flex flex-row justify-between items-center"
       >
         <div>

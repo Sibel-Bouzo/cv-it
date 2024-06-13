@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useGlobalContext } from "@/contexts/Context";
 import { Input } from "../../../components/ui/input";
 import {
   Select,
@@ -18,7 +18,8 @@ import {
 
 // eslint-disable-next-line react/prop-types
 export const LanguagesEntry = ({ index, onDelete, onUpdate, language }) => {
-  const [isShowMore, setIsShowMore] = useState(false);
+  const { expandedIndices, toggleEntry } = useGlobalContext();
+  const isShowMore = expandedIndices.languages === index;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,7 +29,7 @@ export const LanguagesEntry = ({ index, onDelete, onUpdate, language }) => {
   return (
     <div className="border-b-2 border-blue-500 bg-blue p-2 text-sm mt-4 mb-6">
       <div
-        onClick={() => setIsShowMore(!isShowMore)}
+        onClick={() => toggleEntry("languages", index)}
         className="flex flex-row justify-between items-center"
       >
         <div>
