@@ -22,7 +22,7 @@ export const features = [
     desc: "Easily fill in your personal information, work history, skills, and education. Our form adapts to capture all relevant details.",
   },
   {
-    header: "Recruiter Tips and Advice:",
+    header: "Recruiter Tips and Advice",
     desc: "Receive valuable tips and advice from professional recruiters throughout the process to craft a standout CV.",
   },
   {
@@ -33,6 +33,11 @@ export const features = [
     header: "Template Switching",
     desc: "Switch between two professionally designed templates to best represent your professional image.",
   },
+  {
+    header: "Reorder Components",
+    desc: "Easily reorder different sections of your CV to prioritize information according to your preference.",
+  },
+
   {
     header: "PDF Download and Print",
     desc: " Download and print your CV in a polished PDF format, ensuring it looks professional on screen and paper.",
