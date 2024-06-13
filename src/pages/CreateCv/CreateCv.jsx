@@ -107,6 +107,9 @@ export const CreateCv = () => {
             width: 100%;
             padding: 20px; /* Adjust padding as necessary */
           }
+            .flip-container > div {
+            scale:1;
+            }
           .flipper {
             perspective: 1000px;
           }
