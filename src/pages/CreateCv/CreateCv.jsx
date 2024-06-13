@@ -73,18 +73,7 @@ export const CreateCv = () => {
       .map((styleSheet) => {
         try {
           return Array.from(styleSheet.cssRules)
-            .map((rule) => {
-              // Neutralize or remove global styles that could affect layout in print
-              if (
-                rule.selectorText &&
-                (rule.selectorText.includes("body") ||
-                  rule.selectorText.includes("html") ||
-                  rule.selectorText.includes("div"))
-              ) {
-                return "";
-              }
-              return rule.cssText;
-            })
+            .map((rule) => rule.cssText)
             .join("");
         } catch (e) {
           return "";
@@ -97,12 +86,6 @@ export const CreateCv = () => {
       <html>
         <head>
           <style>
-          body, html {
-            margin: 0;
-            padding: 0;
-            background-color: transparent;
-            font-family: ${fontFamily};
-          }
             ${stylesheets}
             ul {
               list-style-type: disc;
@@ -116,29 +99,37 @@ export const CreateCv = () => {
               margin:0;
               font-family: ${fontFamily}; /* Dynamically set the font-family */
             }    
-            .flip-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            padding: 20px; /* Adjust padding as necessary */
-          }
-           
-          .flipper {
-            perspective: 1000px;
-          }
-          .front, .back {
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-          .back {
-            transform: rotateY(180deg);
-          }        
+      .flip-container {
+  perspective: 1000px;
+}
+.flip-container > div {
+scale:1;
+width: 100%;
+height:100%;
+transform:unset
+}
+.flipper {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.flipped .flipper {
+  transform: rotateY(180deg);
+}        
           </style>
         </head>
         <body>
