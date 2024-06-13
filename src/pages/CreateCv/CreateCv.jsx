@@ -73,7 +73,18 @@ export const CreateCv = () => {
       .map((styleSheet) => {
         try {
           return Array.from(styleSheet.cssRules)
-            .map((rule) => rule.cssText)
+            .map((rule) => {
+              // Neutralize or remove global styles that could affect layout in print
+              if (
+                rule.selectorText &&
+                (rule.selectorText.includes("body") ||
+                  rule.selectorText.includes("html") ||
+                  rule.selectorText.includes("div"))
+              ) {
+                return "";
+              }
+              return rule.cssText;
+            })
             .join("");
         } catch (e) {
           return "";
@@ -86,6 +97,12 @@ export const CreateCv = () => {
       <html>
         <head>
           <style>
+          body, html {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            font-family: ${fontFamily};
+          }
             ${stylesheets}
             ul {
               list-style-type: disc;
@@ -107,9 +124,7 @@ export const CreateCv = () => {
             width: 100%;
             padding: 20px; /* Adjust padding as necessary */
           }
-            .flip-container > div {
-            scale:1;
-            }
+           
           .flipper {
             perspective: 1000px;
           }
