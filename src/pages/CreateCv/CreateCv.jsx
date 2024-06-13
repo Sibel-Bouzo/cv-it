@@ -61,10 +61,6 @@ export const CreateCv = () => {
 
     const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-    // const printContents = isFlipped
-    //   ? document.querySelector(".back").innerHTML
-    //   : document.querySelector(".front").innerHTML;
-
     const printContents = isFlipped
       ? document.getElementById("divToPrintBack").innerHTML
       : document.getElementById("divToPrintFront").innerHTML;
@@ -93,7 +89,7 @@ export const CreateCv = () => {
             ${stylesheets}
             ul {
               list-style-type: disc;
-              margin-left: 20px; /* Ensuring the list is indented */
+              margin-left: 20px; 
             }
             .no-margin {
               margin-left:0;
@@ -101,9 +97,30 @@ export const CreateCv = () => {
             body {
               background-color: white;
               margin:0;
-                          font-family: ${fontFamily}; /* Dynamically set the font-family */
-
-            }            
+              font-family: ${fontFamily}; /* Dynamically set the font-family */
+            }    
+            .flip-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            padding: 20px; /* Adjust padding as necessary */
+          }
+          .flipper {
+            perspective: 1000px;
+          }
+          .front, .back {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          .back {
+            transform: rotateY(180deg);
+          }        
           </style>
         </head>
         <body>
