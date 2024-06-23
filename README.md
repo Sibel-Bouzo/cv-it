@@ -10,7 +10,7 @@ The CVit App is a user-friendly, web-based application designed to help job seek
 - Real-Time Preview: See your changes in real-time as you build your CV, ensuring it looks perfect before you download.
 - Custom Section Addition: Add custom sections to highlight unique experiences or qualifications, tailoring your CV to your strengths.
 - Reorder Components: Easily reorder different sections of your CV to prioritize information according to your preference.
-- Download Options: Export your CV in multiple formats such as PDF and Word, ready to be submitted to potential employers.
+- Download Options: Export your CV as PDF format, ready to be submitted to potential employers.
 
 # How to Use
 
